@@ -10,23 +10,31 @@ import { HomeComponent } from './home/home.component';
 import { LoginGuard } from './login-guard';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UnsavedChangesGuard } from './unsaved-changes-guard';
+import { DataComponent } from './data/data.component';
+import { DataResolver } from './data-resolver';
+import { HttpClientModule } from '@angular/common/http';
 
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProductDetailComponent,
-    HomeComponent
+    HomeComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatProgressBarModule
   ],
   providers: [
     LoginGuard,
-    UnsavedChangesGuard
+    UnsavedChangesGuard,
+    DataResolver
   ],
   bootstrap: [AppComponent]
 })

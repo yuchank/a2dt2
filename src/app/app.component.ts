@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'ng-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng';
+  isNavigating = false;
+  constructor(private router: Router) {
+    this.router.events.subscribe(
+      (event) => {
+        if (event instanceof NavigationStart) {
+          this.isNavigating = true;
+        }
+        if (event instanceof NavigationEnd) {
+          this.isNavigating = false;
+        }
+      }
+    );
+  }
 }

@@ -5,6 +5,8 @@ import { LoginGuard } from './login-guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UnsavedChangesGuard } from './unsaved-changes-guard';
+import { DataComponent } from './data/data.component';
+import { DataResolver } from './data-resolver';
 
 const routes: Routes = [
   {
@@ -20,11 +22,22 @@ const routes: Routes = [
     component: ProductDetailComponent,
     canActivate: [LoginGuard],
     canDeactivate: [UnsavedChangesGuard]
+  },
+  {
+    path: 'mydata',
+    component: DataComponent,
+    resolve: {
+      loadedJsonData: DataResolver
+      // loadedJsonData: DataResolverCache
+    },
+    runGuardsAndResolvers: 'always'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
