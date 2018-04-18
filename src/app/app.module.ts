@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HomeComponent } from './home/home.component';
 import { LoginGuard } from './login-guard';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UnsavedChangesGuard } from './unsaved-changes-guard';
 
 
 @NgModule({
@@ -19,9 +21,13 @@ import { LoginGuard } from './login-guard';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [LoginGuard],
+  providers: [
+    LoginGuard,
+    UnsavedChangesGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

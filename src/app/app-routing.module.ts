@@ -4,6 +4,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { LoginGuard } from './login-guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { UnsavedChangesGuard } from './unsaved-changes-guard';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
   {
     path: 'product',
     component: ProductDetailComponent,
-    canActivate: [LoginGuard]
+    canActivate: [LoginGuard],
+    canDeactivate: [UnsavedChangesGuard]
   }
 ];
 
