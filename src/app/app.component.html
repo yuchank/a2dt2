@@ -2,7 +2,11 @@
 <a [routerLink]="['/product']">Product Detail</a>
 <a [routerLink]="['/login']">Login</a>
 <a [routerLink]="['/mydata']">Data</a>
+<a [routerLink]="['', { outlets: { aux: 'chat' } }]">Open Chat</a>
+<a [routerLink]="[{ outlets: { aux: null } }]">Close Chat</a>
+<br />
 <router-outlet></router-outlet>
+<router-outlet name="aux"></router-outlet>
 <div *ngIf="isNavigating">
   Loading...
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>

@@ -15,6 +15,7 @@ import { DataResolver } from './data-resolver';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     LoginComponent,
     ProductDetailComponent,
     HomeComponent,
-    DataComponent
+    DataComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

@@ -7,11 +7,22 @@ import { LoginComponent } from './login/login.component';
 import { UnsavedChangesGuard } from './unsaved-changes-guard';
 import { DataComponent } from './data/data.component';
 import { DataResolver } from './data-resolver';
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'chat',
+    component: ChatComponent,
+    outlet: 'aux'
   },
   {
     path: 'login',
