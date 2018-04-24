@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ChatComponent } from './chat/chat.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { CustomPreloadingStrategy } from './custom-preloading-strategy';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,12 @@ import { ChatComponent } from './chat/chat.component';
   providers: [
     LoginGuard,
     UnsavedChangesGuard,
-    DataResolver
+    DataResolver,
+    CustomPreloadingStrategy,
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
   ],
   bootstrap: [AppComponent]
 })
