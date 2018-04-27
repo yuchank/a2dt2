@@ -46,11 +46,11 @@ import { ProductService } from './product.service';
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
-    },
-    {
-      provide: ProductService,
-      useClass: ProductService
     }
+    // {
+    //   provide: ProductService,
+    //   useClass: ProductService
+    // }
   ],
   bootstrap: [AppComponent]
 })
