@@ -18,6 +18,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ChatComponent } from './chat/chat.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { CustomPreloadingStrategy } from './custom-preloading-strategy';
+import { ProductComponent } from './product/product.component';
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { CustomPreloadingStrategy } from './custom-preloading-strategy';
     ProductDetailComponent,
     HomeComponent,
     DataComponent,
-    ChatComponent
+    ChatComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,10 @@ import { CustomPreloadingStrategy } from './custom-preloading-strategy';
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
+    },
+    {
+      provide: ProductService,
+      useClass: ProductService
     }
   ],
   bootstrap: [AppComponent]
