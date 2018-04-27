@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product';
 import { HttpClient } from '@angular/common/http';
+import { ProductService } from './product-service';
 
 @Injectable()
-export class ProductService {
+export class RealProductService extends ProductService {
 
   constructor(private http: HttpClient) {
+    super();
     // how to assign json to class object? chapter 7
     // http.get<Product>('./assets/products.json').subscribe(data => console.log(data));
   }

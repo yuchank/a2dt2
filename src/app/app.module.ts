@@ -19,8 +19,9 @@ import { ChatComponent } from './chat/chat.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { CustomPreloadingStrategy } from './custom-preloading-strategy';
 import { ProductComponent } from './product/product.component';
-import { ProductService } from './product.service';
+import { RealProductService } from './real-product.service';
 import { MockProductComponent } from './mock-product/mock-product.component';
+import { ProductService } from './product-service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,10 @@ import { MockProductComponent } from './mock-product/mock-product.component';
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
-    ProductService
+    {
+      provide: ProductService,
+      useClass: RealProductService
+    }
   ],
   bootstrap: [AppComponent]
 })

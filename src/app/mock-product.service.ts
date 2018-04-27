@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product';
+import { ProductService } from './product-service';
 
 @Injectable()
-export class MockProductService {
+export class MockProductService implements ProductService {
 
   constructor() {
   }

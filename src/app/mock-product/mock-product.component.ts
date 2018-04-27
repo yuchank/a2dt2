@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ProductService } from '../product.service';
+import { RealProductService } from '../real-product.service';
 import { MockProductService } from '../mock-product.service';
 import { Product } from '../product';
+import { ProductService } from '../product-service';
 
 @Component({
   selector: 'ng-mock-product',
