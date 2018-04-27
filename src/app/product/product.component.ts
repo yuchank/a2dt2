@@ -7,12 +7,12 @@ import { Product } from '../product';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
   // create an instance of ProductService when the ProductComponent is created.
-  providers: [
-    {
-      provide: ProductService,
-      useClass: ProductService
-    }
-  ]
+  // providers: [
+  //   {
+  //     provide: ProductService,
+  //     useClass: ProductService
+  //   }
+  // ]
 })
 export class ProductComponent implements OnInit {
   product: Product;

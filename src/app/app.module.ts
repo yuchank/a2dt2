@@ -20,6 +20,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { CustomPreloadingStrategy } from './custom-preloading-strategy';
 import { ProductComponent } from './product/product.component';
 import { ProductService } from './product.service';
+import { MockProductComponent } from './mock-product/mock-product.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProductService } from './product.service';
     HomeComponent,
     DataComponent,
     ChatComponent,
-    ProductComponent
+    ProductComponent,
+    MockProductComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +48,8 @@ import { ProductService } from './product.service';
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
-    }
-    // {
-    //   provide: ProductService,
-    //   useClass: ProductService
-    // }
+    },
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
