@@ -6,7 +6,8 @@ import { ProductService } from './product-service';
 @Injectable()
 export class RealProductService extends ProductService {
 
-  constructor(private http: HttpClient) {
+  // constructor(private http: HttpClient) {
+  constructor() {
     super();
     // how to assign json to class object? chapter 7
     // http.get<Product>('./assets/products.json').subscribe(data => console.log(data));

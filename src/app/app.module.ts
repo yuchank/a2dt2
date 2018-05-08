@@ -22,6 +22,8 @@ import { ProductComponent } from './product/product.component';
 import { RealProductService } from './real-product.service';
 import { MockProductComponent } from './mock-product/mock-product.component';
 import { ProductService } from './product-service';
+import { productServiceFactory } from './product.factory';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -50,9 +52,18 @@ import { ProductService } from './product-service';
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
+    // {
+    //   provide: ProductService,
+    //   useClass: RealProductService
+    // },
     {
       provide: ProductService,
-      useClass: RealProductService
+      useFactory: productServiceFactory,
+      deps: ['IS_PROD_ENVIRONMENT']
+    },
+    {
+      provide: 'IS_PROD_ENVIRONMENT',
+      useValue: environment.production
     }
   ],
   bootstrap: [AppComponent]
