@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LuxuryService } from '../luxury/luxury-service';
 
 @Component({
   selector: 'ng-home',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(luxuryService: LuxuryService) { }
 
   ngOnInit() {
   }

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LuxuryComponent } from './luxury.component';
 import { RouterModule } from '@angular/router';
-import { LuxuryService } from './luxury-service';
+import { ShippingComponent } from './shipping.component';
+import { ShippingService } from './shipping-service';
 
 @NgModule({
   imports: [
@@ -10,11 +10,11 @@ import { LuxuryService } from './luxury-service';
     RouterModule.forChild([
       {
         path: '',
-        component: LuxuryComponent
+        component: ShippingComponent
       }
     ])
   ],
-  declarations: [LuxuryComponent],
-  providers: [LuxuryService]
+  declarations: [ShippingComponent],
+  providers: [ShippingService]
 })
-export class LuxuryModule { }
+export class ShippingModule { }

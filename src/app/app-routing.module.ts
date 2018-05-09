@@ -9,6 +9,11 @@ import { DataComponent } from './data/data.component';
 import { DataResolver } from './data-resolver';
 import { ChatComponent } from './chat/chat.component';
 import { CustomPreloadingStrategy } from './custom-preloading-strategy';
+import { ShippingModule } from './shipping/shipping.module';
+
+export function shippingModuleLoader() {
+  return ShippingModule;
+}
 
 const routes: Routes = [
   {
@@ -50,6 +55,11 @@ const routes: Routes = [
     data: {
       preloadme: true
     }
+  },
+  {
+    path: 'shipping',
+    // loadChildren: './shipping/shipping.module#ShippingModule'
+    loadChildren: shippingModuleLoader
   }
 ];
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LuxuryService } from './luxury-service';
 
 @Component({
   selector: 'ng-luxury',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LuxuryComponent implements OnInit {
 
-  constructor() { }
+  luxuryItem: string;
+
+  constructor(private luxuryService: LuxuryService) { }
 
   ngOnInit() {
+    this.luxuryItem = this.luxuryService.getLuxuryItem();
   }
 
 }
